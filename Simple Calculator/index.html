@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main">
+        <div>
+            <p class="title">Simple Calculator</p>
+        </div>
+        <div >
+            <input type="text" name="result" id="result">
+        </div>
+        <div class="BtnRow">
+            <button class="onOffBtn" onclick="clearResult()">On/Off</button>
+            <button class="clearBtn" onclick="clearResult()">C</button>
+        </div>
+        <div class="BtnRow">
+            <button class="Btn BtnGrey" onclick="getNumber('7')">7</button>
+            <button class="Btn BtnGrey" onclick="getNumber('8')">8</button>
+            <button class="Btn BtnGrey" onclick="getNumber('9')">9</button>
+            <button class="Btn BtnGrey" onclick="getNumber('/')">/</button>
+        </div>
+        <div class="BtnRow">
+            <button class="Btn BtnGrey" onclick="getNumber('4')">4</button>
+            <button class="Btn BtnGrey" onclick="getNumber('5')">5</button>
+            <button class="Btn BtnGrey" onclick="getNumber('6')">6</button>
+            <button class="Btn BtnGrey" onclick="getNumber('*')">*</button>
+        </div>
+        <div class="BtnRow">
+            <button class="Btn BtnGrey" onclick="getNumber('1')">1</button>
+            <button class="Btn BtnGrey" onclick="getNumber('2')">2</button>
+            <button class="Btn BtnGrey" onclick="getNumber('3')">3</button>
+            <button class="Btn BtnGrey" onclick="getNumber('-')">-</button>
+        </div>
+        <div class="BtnRow">
+            <button class="Btn BtnGrey" onclick="getNumber('.')">.</button>
+            <button class="Btn BtnGrey" onclick="getNumber('0')">0</button>
+            <button style="background-color: #f15839;" class="Btn BtnGrey" onclick="getResult()">=</button>
+            <button class="Btn BtnGrey" onclick="getNumber('+')">+</button>
+        </div>
+        <div>
+            <p class="title">Made by: Usama Zia</p>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
