@@ -13,3 +13,8 @@ function getResult(){
     result.value = eval(result.value)
 }
 
+function backSpace() {   
+    var result = document.getElementById("result");
+    output = result.value;
+    result.value = output.substring(0, output.length - 1);
+}
