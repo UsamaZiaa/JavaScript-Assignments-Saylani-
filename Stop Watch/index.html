@@ -7,7 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Stop Watch</h1>
+    <div id="main">
+        <div>
+            <p class="title">Stop Watch</p>
+        </div>
+
+        <div class="time">
+            <h1 id="min">00</h1>
+            <h1 id="sec">00</h1>
+            <h1 id="msec">00</h1>
+        </div>
+
+        <div class="BtnRow">
+            <button onclick="start()" id="startBtn" class="btn">Start</button>
+            <button onclick="pause()" id="pauseBtn" class="btn">Pause</button>
+            <button onclick="lap()" id="lapBtn" class="btn">Lap</button>
+            <button onclick="reset()" id="resetBtn" class="btn">Reset</button>
+        </div>
+
+        <div class="data">
+            <p id="data"></p>
+        </div>    
+
+    </div>
 </body>
 <script src="app.js"></script>
 </html>
