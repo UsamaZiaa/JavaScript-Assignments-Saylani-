@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 39-67 Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ----------- Chapter 43-48 EVENTS ---------- -->
+    <!-- Task 1 -->
+    <a href="#" id="link" onclick="showAlert()">Click me</a>
+
+    <!-- Task 2 -->
+    <div>
+        <img class="mobImage" onclick="showAlert()" src="images/1.jpg" alt="#">
+        <img class="mobImage" onclick="showAlert()" src="images/2.jpg" alt="#">
+        <img class="mobImage" onclick="showAlert()" src="images/3.jpg" alt="#">
+        <img class="mobImage" onclick="showAlert()" src="images/4.jpg" alt="#">
+    </div>
+
+    <!-- Task 3 -->
+    <table  width = 50% align="center">
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>Usama</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Umama</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Mujtaba</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Sabir</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Hassan</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Umar</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Ashar</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Mustafa</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Moiz</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Haris</td>
+            <td>10</td>
+            <td id="row"><button onclick="delRecord(this)">Delete</button></td>
+        </tr>
+    </table>
+
+    <!-- Task 4 -->
+    <div>
+        <img src="images/1.jpg" id="img" onmouseover="changeImage('img','images/2.jpg')" onmouseout="changeImage('img','images/1.jpg')" alt="#" width="500px">
+    </div>
+
+    <!-- Task 5 -->
+    <p>Counter: <span id="counter">0</span></p> 
+    <button onclick="increase()">Increase</button>
+    <button onclick="decrease()">Decrease</button>
+
+    <!-- ----------- Chapter 49-52 EVENTS ---------- -->
+    <!-- Task 1 -->
+    <form action="JavaScript:void(0)" method="POST" id="mainForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br>
+        <label for="name">Father Name:</label>
+        <input type="text" id="fname"><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email"><br>
+        <label for="phone">Phone:</label>
+        <input type="number" id="number"><br>
+        <label for="address">Address</label>
+        <input type="text" id="address"><br>
+        <button onclick="submitBtn()">Submit</button>
+    </form>        
+
+    <!-- Task 2 -->
+    <p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nulla aliquid quos, corrupti aut voluptatum officia cupiditate illo ipsam accusamus vel autem odio, repudiandae quibusdam alias expedita amet quidem libero.</p>
+    <p id="shortDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit <a href="JavaScript:void(0)" onclick="seeMore()">See More</a></p>
+
+    <!-- Task 3     -->
+    <div style="margin: auto; width: 50%;">
+        <label for="stdName">Student Name:</label>
+        <input type="text" id="stdName"><br>
+        <label for="stdClass">Student Class:</label>
+        <input type="text" id="stdClass"><br>
+        <button onclick="addRecord()">Add Student</button>        
+    </div><br>    
+
+    <table  width = 50% align="center" id="recordTable">
+        <tr>
+            <th style="text-align: left;">Name</th>
+            <th style="text-align: left;">Class</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+    </table>
+
+    <!-- ----------- Chapter 53-58 EVENTS ---------- -->
+    <!-- Task 1 -->
+    <div >
+        <img class="mobImage" id="img" onclick="showModal('img','images/1.jpg')" src="images/1.jpg" alt="#">
+        <img class="mobImage" id="img" onclick="showModal('img','images/2.jpg')" src="images/2.jpg" alt="#">
+        <img class="mobImage" id="img" onclick="showModal('img','images/3.jpg')" src="images/3.jpg" alt="#">
+        <img class="mobImage" id="img" onclick="showModal('img','images/4.jpg')" src="images/4.jpg" alt="#">
+    </div>        
+
+    <div id="main" class="hidden">
+        <div id="imgDiv">
+            <img src="images/1.jpg" id="modalImg" alt="" width="100%" height="500px">
+            <button id="close" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Task 2 -->
+    <p id="pera" style="font-size: 16px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores a, veritatis reprehenderit veniam unde odit distinctio aperiam itaque nam quis commodi, id architecto est doloremque, quasi nesciunt. Reiciendis, enim sed.</p>
+    <button onclick="zoomIn()">Zoom +</button>
+    <button onclick="zoomOut()">Zoom -</button>
+
+    <!-- ----------- Chapter 58-67 DOM ---------- -->
+    <!-- Task 1 -->
+    <div>
+        <h1> DOM </h1>
+        <div id="form-content" class="content">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" />
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" />
+            <label for="email">Email</label>
+            <input type="text" id="email" />
+        </div>
+        <div id="main-content" class="content">
+            <p class="render"> First Name : Alex</p>
+            <p class="render" id="lastName">Last Name: Bank</p>
+            <p class="render"> Email : alexbank@example.com</p>
+            <p class="render"> Country : Pakistan </p>
+            <p class="render"> contact : +92 300 1234567</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
