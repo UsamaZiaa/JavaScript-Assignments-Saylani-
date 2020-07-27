@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo Application</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Todo Application</h1>
+
+    <div id="main">
+        <h2 id="heading">Todo Application</h2>
+        <div>
+            <input type="text" id="item">
+            <button onclick="addItem()" class="addBtn"><b>Add Task</b></button>
+            <button onclick="deleteAll()" class="delAllBtn"><b>Delete All</b></button>
+        </div>
+        <div id="content">
+            <table id="table" cellpadding="3px">
+            </table>
+        </div>
+    </div>
 </body>
+<script src="app.js"></script>
 </html>
