@@ -52,7 +52,12 @@ function deleteAll(){
 function editItem(e){
     var val = e.parentNode.parentNode.firstChild.innerText;
     var newVal = prompt("Enter new value",val)
-    e.parentNode.parentNode.firstChild.innerText = newVal
+    if(newVal.replace(/\s/g,"") == ""){
+        alert("Empty Input, Changes not saved")
+    }
+    else{
+        e.parentNode.parentNode.firstChild.innerText = newVal
+    }
 }
 
 function delItem(e){
