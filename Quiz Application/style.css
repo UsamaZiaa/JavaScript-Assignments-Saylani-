@@ -1,0 +1,25 @@
+.card{
+    box-shadow: 2px 2px 10px 2px grey;
+}
+
+p{
+    cursor: pointer;
+}
+
+p:hover{
+    background-color:#17a2b8!important;
+    color: white;    
+}
+
+.selected{
+    background-color:#17a2b8!important;
+    color: white;
+}
+
+.hidden{
+    display: none;
+}
+
+.visible{
+    display: block;
+}

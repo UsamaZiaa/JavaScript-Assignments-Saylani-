@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
 </head>
-<body>
-    <h1>Quiz Application</h1>
+
+<body class="bg-light">
+    <div class="bg-info">
+        <h1 class="text-center text-white p-3">Quiz Application</h1>
+    </div>
+
+    <div id="form">
+        <div class="card mx-auto my-5" style="width: 80%;">
+            <div class="card-header text-center text-info">
+                <h3 class="d-inline">HTML Quiz</h3>
+            </div>
+            <div class="card-body text-center">
+                <form action="quiz.html">
+                    <div class="form-group text-left p-3">
+                        <label for="uname">Enter Name to Start Quiz:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Start Quiz</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="app.js"></script>
+
 </html>
