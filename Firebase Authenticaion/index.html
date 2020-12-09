@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAlKXDFyboKDFcZteVeEa2_pa83P6W_6DY",
+          authDomain: "usamaproject-13060.firebaseapp.com",
+          databaseURL: "https://usamaproject-13060.firebaseio.com",
+          projectId: "usamaproject-13060",
+          storageBucket: "usamaproject-13060.appspot.com",
+          messagingSenderId: "175677200956",
+          appId: "1:175677200956:web:f8ddc6081ff0c16dd90139"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+</head>
+<body>
+    <h1>Index</h1>
+    <input type="email" id="email" placeholder="email">
+    <input type="password" id="password" placeholder="password">
+    <button onclick="signin()">Sign In</button>
+    <script src="app.js"></script>
+</body>
+</html>

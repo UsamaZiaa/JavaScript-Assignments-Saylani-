@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <h4 class="text-center mb-4" style="color: purple;">Expense Tracker App</h4>
+        <div>
+            <input class="addIncome" type="number" id="income" placeholder="Enter Your Income">
+            <button class="btn btnIncome btn-sm" onclick="addIncome()">Add Income</button>
+        </div>
+        <div id="info" class="mt-1 p-3">
+            <h4 class="text-white m-0">Your Balance</h4>
+            <h1 class="text-white" id="currentIncome"></h1>
+        </div>
+        <div class="mt-2">
+            <h5 style="color: purple;">Add Expense</h5>
+            <input style="margin-bottom:5px" class="addExpense" placeholder="Enter Amount" type="number" id="expense">
+            <input type="date" id="dateExpense" style="width: 180px;">
+            <select id="category" class="btnExpense" style="width: 175px;">
+                <option value="Categories">Categories</option>
+                <option value="Bike">Bike</option>
+                <option value="Education">Education</option>
+                <option value="Food">Food</option>
+                <option value="Gift">Gift</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Health">Health</option>
+                <option value="House">House</option>
+                <option value="Rent">Rent</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Transport">Transport</option>
+                <option value="Vacation">Vacation</option>
+            </select>
+            <button class="btn btnExpense btn-sm" style="width: 150px;" onclick="addExpense()">Add Expense</button>
+        </div>
+        <div class="mt-1" style="color: purple;">
+            <label for=""><b>Filters by:</b></label>
+            <select style="width: 135px;" id="showExpense" onchange="showFilterExpense()" style="color: purple;">
+                <option value="Categories">Categories</option>
+                <option value="Bike">Bike</option>
+                <option value="Education">Education</option>
+                <option value="Food">Food</option>
+                <option value="Gift">Gift</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Health">Health</option>
+                <option value="House">House</option>
+                <option value="Rent">Rent</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Transport">Transport</option>
+                <option value="Vacation">Vacation</option>
+            </select>
+            <select style="width: 140px;" id="dateFilter" onchange="showFilterExpense()" style="color: purple;">
+                <option value="Date">Date</option>
+            </select>
+        </div>
+        <div id="data" class="mt-2 p-3">
+            <table class="mb-3 " id="dataList">
+                <tr>
+                    <td style="width: 70px; color: purple;"><b>Date</b></td>
+                    <td style="width: 100px; color: purple;"><b>Category</b></td>
+                    <td style="color: purple;"><b>Amount</b></td>
+                    <td></td>
+                    <td style="color: purple;"><b>Edit</b></td>
+                    <td style="color: purple;"><b>Delete</b></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

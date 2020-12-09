@@ -1,0 +1,60 @@
+.header{
+    box-shadow: 0px 2px 2px 2px lightgray;
+}
+.logo{
+    height: 35px;
+}
+.hero{
+    width: 100%;
+    height: 250px;
+    background-image:url(https://statics.olx.com.pk/external/base/img/hero_bg_pk.jpg);
+    background-position: center;
+}
+.fresh_rec{
+    padding: 40px;
+}
+
+.product_image{
+    height: 140px;
+}
+
+.advertisement{
+    width: 100%;
+    height: 200px;
+    background-color: #f1f1f1;
+}
+
+.footer{
+    background-color: lightgray;
+}
+li{
+    list-style: none;
+}
+
+.bar{
+    background-color: #002f34;
+    height: 45px;
+}
+.t14{
+    font-size: 12px;
+    line-height: 45px;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    
+ }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hide-loader{
+display:none;
+}

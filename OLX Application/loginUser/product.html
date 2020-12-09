@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-storage.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyD4SOd_KS035QF6XwCjsHqDRwkBM0mDC6k",
+            authDomain: "practice-fef02.firebaseapp.com",
+            databaseURL: "https://practice-fef02.firebaseio.com",
+            projectId: "practice-fef02",
+            storageBucket: "practice-fef02.appspot.com",
+            messagingSenderId: "1083564328478",
+            appId: "1:1083564328478:web:78caf797160a59e984100f"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+    <!-- Navbar or Header ============================================================================== -->
+    <nav class="header navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html"><img src="../img/olx-logo.png" class="logo" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="all categories.html">All Categories</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="mobile phones.html">Mobile Phones</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="cars.html">Cars</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="motorcycles.html">Motorcycles</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="houses.html">Houses</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="tv video audio.html">TV-Video-Audio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="tablets.html">Tablets</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="land and plots.html">Land & Plots</a>
+                </li>
+            </ul>
+            <!-- Example single danger button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary mr-3 dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    My Profile
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="my ads.html">My Ads</a>
+                    <a class="dropdown-item" href="../index.html">Logout</a>
+                </div>
+            </div>
+            <a href="product.html"><button class="btn btn-outline-primary my-2 my-sm-0">Sell</button></a>
+        </div>
+    </nav>
+
+    <!-- Start of Product Form ========================================= -->
+    <div class="p-5 text-primary text-center">
+        <h1>Add a Product</h1>
+    </div>
+    <div class="row mb-5">
+        <div class="offset-3"></div>
+        <div class="col-6">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Name</label>
+                <input type="email" class="form-control" id="proName" aria-describedby="emailHelp"
+                    placeholder="Product Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Description</label>
+                <input type="email" class="form-control" id="proDes" aria-describedby="emailHelp"
+                    placeholder="Product Description">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Price</label>
+                <input type="number" class="form-control" id="proPrice" aria-describedby="emailHelp"
+                    placeholder="Product Price">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Product Category</label>
+                <select class="form-control" id="proCateg">
+                    <option>Select Category</option>
+                    <option>Mobile Phones</option>
+                    <option>Cars</option>
+                    <option>Motorcycles</option>
+                    <option>Houses</option>
+                    <option>TV-Video-Audio</option>
+                    <option>Tablets</option>
+                    <option>Land & Plot</option>
+                  </select>
+              </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Select City</label>
+                <select class="form-control" id="proCity">
+                    <option>Select City</option>
+                    <option>Karachi</option>
+                    <option>Lahore</option>
+                    <option>Islamabad</option>
+                    <option>Peshawar</option>
+                    <option>Quetta</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlFile1">Upload Image</label>
+                <input type="file" class="form-control-file" id="proImg">
+              </div>
+                <small id="productError" class="form-text text-muted" style="color: red !important;"></small>
+                <button type="submit" onclick="addProduct()" class="btn btn-primary">Add Product</button>
+                <!-- <div class="loader" id="loader"></div> -->
+        </div>
+    </div>
+    <!-- End of Product Form =========================================== -->
+
+
+    <!-- Footer ==================================================================================== -->
+    <div class="row footer py-3">
+
+        <div class="col-1"></div>
+
+        <div class="col-2">
+            <h6>POPULAR CATEGORIES</h6>
+            <li>Car</li>
+            <li>Flat for Rent</li>
+            <li>Jobs</li>
+            <li>Mobile Phones</li>
+        </div>
+
+        <div class="col-2">
+            <h6>TRENDING SEARCHES</h6>
+            <li>Bike</li>
+            <li>Watches</li>
+            <li>Books</li>
+            <li>Dogs</li>
+        </div>
+
+        <div class="col-2">
+            <h6>ABOUT US</h6>
+            <li>About OLX Group</li>
+            <li>OLX Blog</li>
+            <li>Contact Us</li>
+            <li>OLX for Business</li>
+        </div>
+
+        <div class="col-2">
+            <h6>OLX</h6>
+            <li>Help</li>
+            <li>Sitemap</li>
+            <li>Legal & Privacy</li>
+        </div>
+
+        <div class="col-2">
+            <h6>Follow Us</h6>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+            <li>Youtube</li>
+        </div>
+
+        <div class="col-1"></div>
+
+    </div>
+
+    <!-- RBar =========================================================== -->
+    <div class="row bar">
+        <div class="col-1"></div>
+        <div class="col-3 text-white t14">
+            <p><b>Other Countries</b>India - South Africa - Indonesia</p>
+        </div>
+        <div class="col-4"></div>
+        <div class="col-3 text-white t14">
+            <p><b>Free Classifieds in Pakistan</b>© 2006-2020 OLX</p>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
+    <script src="../js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

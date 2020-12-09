@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAlKXDFyboKDFcZteVeEa2_pa83P6W_6DY",
+          authDomain: "usamaproject-13060.firebaseapp.com",
+          databaseURL: "https://usamaproject-13060.firebaseio.com",
+          projectId: "usamaproject-13060",
+          storageBucket: "usamaproject-13060.appspot.com",
+          messagingSenderId: "175677200956",
+          appId: "1:175677200956:web:f8ddc6081ff0c16dd90139"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+</head>
+<body onload="checkUser()">
+    <h1>Login</h1>
+    <button onclick="signOut()">Log out</button>
+    <script src="app.js"></script>
+</body>
+</html>

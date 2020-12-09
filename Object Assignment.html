@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Assignment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-primary my-5">User Registeration</h1>
+        <form action="#">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" id="fname" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" id="lname" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Location</label>
+              <input type="text" id="loc" class="form-control">
+            </div>
+            <button onclick="getData()" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+    <div class="container">
+        <h1 class="text-primary my-5">Data of Registered Users</h1>
+        <table class="table" id="table">
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Location</th>
+              </tr>
+          </table>
+    </div>
+
+    <script>
+
+        var users = []
+
+        function getData(){
+            var fname = document.getElementById('fname').value
+            var lname = document.getElementById('lname').value
+            var email = document.getElementById('email').value
+            var loc = document.getElementById('loc').value
+
+            var user = new UserCreated(fname,lname,email,loc)
+            users.push(user)
+            // console.log(users)
+
+            var fname = document.getElementById('fname').value = ""
+            var lname = document.getElementById('lname').value = ""
+            var email = document.getElementById('email').value = ""
+            var loc = document.getElementById('loc').value = ""
+
+            showData();
+        }
+
+        function UserCreated(fname,lname,email,loc){
+            this.fname =fname;
+            this.lname =lname;
+            this.email =email;
+            this.loc =loc;
+        }
+
+        function showData(){
+            var user = users[users.length-1]
+            var table = document.getElementById('table')
+            var userTr = document.createElement('tr')
+
+            var fnameTd = document.createElement('td')
+            var fnameText = document.createTextNode(user.fname)
+            fnameTd.appendChild(fnameText)
+
+            var lnameTd = document.createElement('td')
+            var lnameText = document.createTextNode(user.lname)
+            lnameTd.appendChild(lnameText)
+
+            var emailTd = document.createElement('td')
+            var emailText = document.createTextNode(user.email)
+            emailTd.appendChild(emailText)
+         
+            var locTd = document.createElement('td')
+            var locText = document.createTextNode(user.loc)
+            locTd.appendChild(locText)
+
+            userTr.appendChild(fnameTd)
+            userTr.appendChild(lnameTd)
+            userTr.appendChild(emailTd)
+            userTr.appendChild(locTd)
+            table.appendChild(userTr)
+        }
+
+    </script>
+
+</body>
+</html>

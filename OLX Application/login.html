@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLX Login Page</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyD4SOd_KS035QF6XwCjsHqDRwkBM0mDC6k",
+          authDomain: "practice-fef02.firebaseapp.com",
+          databaseURL: "https://practice-fef02.firebaseio.com",
+          projectId: "practice-fef02",
+          storageBucket: "practice-fef02.appspot.com",
+          messagingSenderId: "1083564328478",
+          appId: "1:1083564328478:web:78caf797160a59e984100f"
+        };
+        firebase.initializeApp(firebaseConfig);
+      </script>
+</head>
+
+<body>
+    <!-- Navbar or Header ============================================================================== -->
+        <nav class="header navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html"><img src="./img/olx-logo.png" class="logo" alt=""></a>
+        </nav>
+
+        <!-- Login Form ================================================== -->
+        <div class="row m-5 p-5">
+            <div class="offset-lg-4"></div>
+            <div class="col-4">
+                  <h2 class="text-primary">Login</h2>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Password">
+                      <small id="error" style="color: red !important;" class="form-text text-muted"></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="login()">Login</button>
+                    <p>New User? Then <a href="signup.html">Click Here</a></p>
+
+            </div>
+            <div class="offset-md-4"></div>
+        </div>
+
+        <script src="js/app.js"></script>
+</body>
+
+</html>
