@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: #EFF1F3;
+        }
+        #main{
+            background-color: white;
+            width: 350px;
+            height: 530px;
+            text-align: center;
+            box-shadow: 2px 2px 10px 1px;
+            border: 6px solid #D7B73F;
+        }
+        h1{
+            font-size: 70px;
+        }
+        .btn-success{
+            background-color: #D7B73F;
+            border-color: #D7B73F;
+        }
+        .btn-success:hover{
+            background-color: black !important;
+        }
+        #data{
+            height: 300px;
+            overflow: auto;
+        }
+        .fixesSize{
+            width: 90px;
+        }
+        #data>p{
+            font-size: 20px;
+        }
+        h4{
+            color: #D7B73F;
+        }
+        button:disabled{
+            background-color: black !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main" class="my-5 mx-auto">
+        <h4 class="mt-2">Stop Watch</h4>
+        <div id="time" class="mb-3">
+            <div class="d-inline-block mx-1 fixesSize"><h1 id="min">00</h1></div>
+            <div class="d-inline-block mx-1 fixesSize"><h1 id="sec">00</h1></div>
+            <div class="d-inline-block mx-1 fixesSize"><h1 id="msec">00</h1></div>
+        </div>
+        <div>
+            <button class="btn btn-success" onclick="start()" id="startBtn">Start</button>
+            <button class="btn btn-success" onclick="pause()" id="pauseBtn">Pause</button>
+            <button class="btn btn-success" onclick="lap()" id="lapBtn">Lap</button>
+            <button class="btn btn-success" onclick="reset()" id="resetBtn">Reset</button>
+        </div>
+        <div id="data" class="mx-3 my-3 text-left"></div>
+    </div>
+</body>
+
+<script>
+    var min = 0
+    var sec = 0
+    var msec = 0
+    var minHeading = document.getElementById('min')
+    var secHeading = document.getElementById('sec')
+    var msecHeading = document.getElementById('msec')
+    var interval
+    var round = 1
+    var prevMin = 00 
+    var prevSec = 00
+    var prevMsec = 00 
+    var startBtn = document.getElementById('startBtn')
+    var pauseBtn = document.getElementById('pauseBtn')
+    var lapBtn = document.getElementById('lapBtn')
+    var resetBtn = document.getElementById('resetBtn')
+
+    function timer() {
+        msec++
+        msecHeading.innerHTML = msec
+        if(msec > 99){
+            sec++
+            msec = 0
+            if(sec < 10){
+            secHeading.innerHTML = "0" + sec
+            } 
+            else{
+            secHeading.innerHTML = sec
+            } 
+        }
+        if(sec >= 60){           
+            min++
+            sec = 0
+            if(min < 10){
+            minHeading.innerHTML = "0" + min
+            }
+            else{
+            minHeading.innerHTML = min
+            }
+        }
+        if(min >= 60){
+            min = 0
+            minHeading.innerHTML = min
+        }    
+    }
+
+    function start() {
+        interval = setInterval(timer,10)
+        startBtn.disabled = true        
+        pauseBtn.disabled = false        
+        lapBtn.disabled = false        
+        resetBtn.disabled = false        
+    }
+
+    function pause(){
+        clearInterval(interval)
+        startBtn.disabled = false        
+        pauseBtn.disabled = true        
+        lapBtn.disabled = false        
+        resetBtn.disabled = false        
+    }
+
+    function lap(){
+        clearInterval(interval)
+        var para = document.createElement('p')
+        var diffMin = min - prevMin
+        var diffSec = sec - prevSec
+        var diffMsec = msec - prevSec
+        // console.log(diffMin,diffSec,diffMsec)
+        var text = document.createTextNode("Lap " + round + ", " + " " + min + ": " + sec + "." + msec + " +" + diffMin + ": " + diffSec + ". " + diffMsec)
+        para.appendChild(text)
+        para.setAttribute("class","mx-3")
+        var data = document.getElementById('data')
+        data.insertBefore(para, data.childNodes[0]); 
+        round++
+        prevMin = min
+        prevSec = sec
+        prevMsec = msec
+        start()
+    }
+    
+    function reset(){
+        min = 0
+        sec = 0
+        msec = 0
+        clearInterval(interval)
+        minHeading.innerHTML = "0" + min
+        secHeading.innerHTML = "0" + sec
+        msecHeading.innerHTML = "0" + msec
+        var data = document.getElementById('data')
+        data.innerHTML = ""        
+        startBtn.disabled = false        
+        pauseBtn.disabled = false
+        round = 1        
+    }
+</script>
+
+</html>
